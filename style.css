@@ -1,0 +1,37 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+.border-10 {
+    border-width: 10px;
+}
+.font-comic {
+    font-family: 'Comic Sans MS', cursive;
+}
+.relative-container {
+    position: relative;
+}
+.absolute-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.transition-max-height {
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+}
+.max-h-0 {
+    max-height: 0;
+}
+.max-h-expand {
+    max-height: 10000px; /* 적당한 최대 높이 설정 */
+}
+.menu-images img {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+.menu-images img.expanded {
+    transform: scale(2);
+    z-index: 10;
+    position: relative;
+}

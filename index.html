@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMU Cafeteria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="photo/images/icons/icon-192x192.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js" defer></script>
+</head>
+<body class="text-gray-800">
+    <div class="mx-auto border-8 border-customBlue bg-white shadow-xl">
+        <div class="relative w-full h-24 bg-customBlue">
+            <img src="photo/smu.png" alt="SMU Logo" class="absolute-logo" width="70">
+        </div>
+        <div class="p-4 pt-10 mx-5">
+            <div class="text-center mb-4">
+                <h1 class="text-3xl font-bold text-customBlue">오늘의 학식은?</h1>
+            </div>
+            <div class="space-y-6">
+                <div onclick="toggleContent('seoulContent')" class="cursor-pointer border rounded-lg shadow-lg overflow-hidden bg-white flex items-center mt-6 no-underline">
+                    <img src="photo/seoul.png" alt="Seoul Campus R Building" class="w-1/4 h-32 object-cover">
+                    <div class="p-4 w-3/4">
+                        <h2 class="text-xl font-semibold text-customBlue"><span class="font-comic">Seoul Campus R Building</span></h2>
+                        <p class="text-gray-600">서울캠퍼스 미래백년관<br>중식 11:00 ~ 13:30</p>
+                    </div>
+                </div>
+                <div id="seoulContent" class="transition-max-height max-h-0 p-0">
+                    <p style="text-align: center; padding: 20px">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                    <div class="menu-images">
+                        <img src="photo/seoul_lunch1.png" alt="서울캠퍼스 중식 메뉴 1" style="margin: 50px auto 50px auto; width: 12000px; height: auto;">
+                        <img src="photo/seoul_lunch2.png" alt="서울캠퍼스 중식 메뉴 2" style="margin: 50px auto 50px auto; width: 12000px; height: auto;">
+                    </div>
+                </div>
+
+                <div onclick="toggleContent('hannooriContent')" class="cursor-pointer border rounded-lg shadow-lg overflow-hidden bg-white flex items-center mt-6 no-underline">
+                    <img src="photo/교직원.png" alt="Cheonan Campus I Building" class="w-1/4 h-32 object-cover">
+                    <div class="p-4 w-3/4">
+                        <h2 class="text-xl font-semibold text-customBlue"><span class="font-comic">Cheonan Campus I Building</span></h2>
+                        <p class="text-gray-600">천안캠퍼스 한누리관<br>7,000원<br>중식 11:00 ~ 13:30</p>
+                    </div>
+                </div>
+                <div id="hannooriContent" class="transition-max-height max-h-0 p-0">
+                    <p style="text-align: center; padding: 20px">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                    <div class="menu-images">
+                        <img src="photo/한누리관.jpg" alt="천안캠퍼스 한누리관 메뉴" style="margin: 50px auto 50px auto; width: 12000px; height: auto; padding: 20px">
+                    </div>
+                </div>
+
+                <div onclick="toggleContent('studentContent')" class="cursor-pointer border rounded-lg shadow-lg overflow-hidden bg-white flex items-center mt-6 no-underline">
+                    <img src="photo/학생.png" alt="Cheonan Campus H Building" class="w-1/4 h-32 object-cover">
+                    <div class="p-4 w-3/4">
+                        <h2 class="text-xl font-semibold text-customBlue"><span class="font-comic">Cheonan Campus H Building</span></h2>
+                        <p class="text-gray-600">천안캠퍼스 학생회관<br>5,000원<br>중식 11:00 ~ 13:30</p>
+                    </div>
+                </div>
+                <div id="studentContent" class="transition-max-height max-h-0 p-0">
+                    <p style="text-align: center; padding: 20px">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                    <div class="menu-images">
+                        <img src="photo/학생회관.png" alt="천안캠퍼스 한누리관 메뉴" style="margin-top: 10px; margin-bottom: 50px; padding: 20px; width: 5000px; height: auto;">
+                    </div>
+                </div>
+
+                <div onclick="toggleContent('busContent')" class="cursor-pointer border rounded-lg shadow-lg overflow-hidden bg-white flex items-center mt-6 no-underline">
+                    <img src="photo/busphoto.png" alt="Cheonan Campus Shuttle Bus" class="w-1/4 h-32 object-cover">
+                    <div class="p-4 w-3/4">
+                        <h2 class="text-xl font-semibold text-customBlue"><span class="font-comic">Seoul Campus Shuttle Bus</span></h2>
+                        <p class="text-gray-600">서울캠퍼스 셔틀버스</p>
+                    </div>
+                </div>
+                <div id="busContent" class="transition-max-height max-h-0 p-0">
+                    <p style="text-align: center; padding: 5px; margin-top: 30px;">
+                        오늘의 날짜와 시간<br><span id="currentDate"></span>
+                    </p>
+                    <div class="menu-images">
+                        <img src="photo/seoulbus.png" alt="통학버스 등교" style="margin: 30px auto 10px auto; width: 3000px; height: auto; padding: 10px; display: block;">
+                    </div>
+                </div>
+
+                <div onclick="toggleContent('Cheonanbus')" class="cursor-pointer border rounded-lg shadow-lg overflow-hidden bg-white flex items-center mt-6 no-underline">
+                    <img src="photo/busphoto.png" alt="Cheonan Campus Shuttle Bus" class="w-1/4 h-32 object-cover">
+                    <div class="p-4 w-3/4">
+                        <h2 class="text-xl font-semibold text-customBlue"><span class="font-comic">Cheonan Campus Shuttle Bus</span></h2>
+                        <p class="text-gray-600">천안캠퍼스 셔틀버스</p>
+                    </div>
+                </div>
+                <div id="Cheonanbus" class="transition-max-height max-h-0 p-0">
+                    <p style="text-align: center; padding: 5px; margin-top: 30px;">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                    <div class="menu-images">
+                        <img src="photo/commutebus1.png" alt="통학버스 등교" style="margin: 50px auto 10px auto; width: 5000px; height: auto; padding: 10px;">
+                        <p style="text-align: center; padding: 10px">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                        <img src="photo/commutebus2.png" alt="통학버스 하교" style="margin: 50px auto 10px auto; width: 5000px; height: auto; padding: 10px;">
+                        <p style="text-align: center; padding: 10px">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                        <img src="photo/shuttlebus1.png" alt="두정역 등교셔틀" style="margin: 50px auto 10px auto; width: 5000px; height: auto; padding: 10px;">
+                        <p style="text-align: center; padding: 10px">오늘의 날짜와 시간<br><span id="currentDate"></span></p>
+                        <img src="photo/shuttlebus2.png" alt="천안역 하교셔틀" style="margin: 50px auto 10px auto; width: 5000px; height: auto; padding: 10px;">
+                    </div>
+                </div>
+
+                <div id="installguide">
+                    <div onclick="toggleContent('installContent')" class="cursor-pointer border rounded-lg shadow-lg overflow-hidden bg-white flex items-center mt-6 no-underline">
+                        <div class="p-4 w-3/4">
+                            <h2 class="text-xl font-semibold text-customBlue"><span class="font-comic">Install Application</span></h2>
+                            <p class="text-gray-600">웹앱 설치 가이드</p>
+                            <b style="font-size: 13px;">안드로이드, IOS 공통<br></b>
+                            <b style="font-size: 12px; color: brown;">크롬 사용해주세요!</b>
+                        </div>
+                    </div>
+                    <div id="installContent" class="transition-max-height max-h-0 p-4">
+                        <div class="responsive-images" style="padding: 30px;">
+                            <p><br><br>크롬을 통해 웹사이트로 들어오시고 맨 위에 있는 더보기 버튼을 눌러주세요!<br>아이폰의 경우 공유 버튼을 눌러주세요!<br><br></p>
+                            <img src="photo/install1.jpg" alt="설치 가이드 1">
+                            <img src="photo/install2.jpg" alt="설치 가이드 2">
+                            <p><br><br>홈 화면 추가 버튼을 눌러주세요!<br>그 다음 안드로이드는 설치, 아이폰은 추가 버튼을 눌러주시면 바로 설치됩니다.<br><br></p>
+                            <img src="photo/install3.jpg" alt="설치 가이드 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-60 bg-customBlue flex items-center justify-center text-white">
+            <p class="text-lg mx-5">현재 업데이트 중입니다!</p>
+        </div>
+    </div>
+</body>
+</html>
